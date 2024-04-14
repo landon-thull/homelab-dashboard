@@ -19,7 +19,7 @@ export const handleResponse = async (response: string) => {
   return { response: fileJson, error: false };
 };
 
-const fetchFile = (f: string) => {
+export const fetchFile = (f: string) => {
   return fs
     .readFile(`${process.cwd()}/src/data/${f}.json`, "utf8")
     .then((res) => handleResponse(res))
